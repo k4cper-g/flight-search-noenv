@@ -1,0 +1,66 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'static/style.css' %}">
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title> Flight Search </title>
+</head>
+<body>
+
+<form>
+    <img src="{% static 'static/img/lot.png' %}" width = "100" height="50" alt="My image">
+    <label class="form-label"> From:
+        <div class="form-stick">
+            <input type="text" placeholder="City or Airport" name="currentLocation" id="from" onkeydown="fillSearchFrom()"/>
+                <div class="search-dropdown" id="drpFrom">
+                    <ul class="items" id="itemsFrom">
+                    </ul>
+                </div>
+        </div>
+    </label>
+    <label class="form-label"> To:
+        <div class="form-stick">
+        <input type="text" placeholder="City or Airport" name="destination" id="to" onkeydown="fillSearchTo()"/>
+            <div class="search-dropdown" id="drpTo">
+                    <ul class="items" id="itemsTo">
+                    </ul>
+                </div>
+    </div>
+    </label>
+    <label class="form-label" > Departure:
+        <input type="date" name="departureDate" id="dep"/></label>
+    <label class="form-label"> Return:
+        <input type="date" name="returnDate" id="ret"/></label>
+    <button type="button" value="Submit" onclick="getOffers()" id="sub-butt"> Search</button>
+</form>
+
+<div class="noFlights" id="noF">
+    <h1>Oops! No flights found...</h1>
+</div>
+
+
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeMyModal">&times;</span>
+    <p>❌ Error! ❌</p>
+      <p>Please check you correctly entered everything correctly.</p>
+  </div>
+</div>
+
+<div id="noFlightsModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeFlightsModal">&times;</span>
+    <p>❌ Oops! ❌</p>
+      <p>Seems that there are no flights that suit your taste currently available.</p>
+      <p>Please consider changing the destination or date.</p>
+  </div>
+</div>
+
+
+</body>
+<footer>
+    author: Kacper Gadomski
+</footer>
+<script src="{% static 'static/script.js' %}"></script>
+</html>
