@@ -71,6 +71,6 @@ def search_offers(request):
 
 
 amadeus = Client(
-    client_id='l8ZesYhh2MJgEJgzPyWx8I769Ls0M9V4',
-    client_secret='HMR5CtgXyAXDTvCb'
+    client_id='ID',
+    client_secret='SECRET'
 )
